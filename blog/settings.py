@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'GMT+0 '
+TIME_ZONE = 'Africa/Dakar'
 
 USE_I18N = True
 
