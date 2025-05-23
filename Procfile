@@ -1,1 +1,1 @@
-gunicorn monprojet.wsgi
+gunicorn blog.wsgi
