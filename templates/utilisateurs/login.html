@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content  %} 
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Le Blog de Khadijaah</h2>
+   
+    </div>
+
+<div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+  <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-6">Connexion</h2>
+    
+    <form method="POST" class="space-y-5">
+      {% csrf_token %}
+
+      {% for field in form %}
+        <div>
+          <label class="block text-sm font-medium text-gray-700">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ field.errors|join:", " }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="w-full bg-terracotta text-white font-semibold py-2 px-4 rounded hover:bg-opacity-90 transition">
+        Se connecter
+      </button>
+    </form>
+
+    {% if error_message %}
+      <div class="mt-4 text-sm text-red-600 text-center">{{ error_message }}</div>
+    {% endif %}
+  </div>
+</div>
+
+
+{% endblock content  %}

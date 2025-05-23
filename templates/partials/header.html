@@ -1,0 +1,21 @@
+<header class="bg-terracotta text-white p-6 shadow-md text-center">
+    <h1 class="text-4xl font-bold">Mon Blog Chic</h1>
+    <nav class="mt-4">
+      <a href="{% url 'index' %}" class="mx-4 font-semibold hover:opacity-70">Blog</a>
+      <a href="{% url 'articles' %}"class="mx-4 font-semibold hover:opacity-70">Articles</a>
+      <a href="{% url 'ajout_article' %}" class="mx-4 font-semibold hover:opacity-70">Nouvel Article</a>
+      {% if request.user.is_authenticated %}
+  Bonjour, {{ request.user.username }} |
+ <form action="{% url 'logout' %}" method="post" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit" class="mx-4 font-semibold hover:opacity-70 bg-transparent border-0 p-0 cursor-pointer">Déconnexion</button>
+</form>
+
+{% else %}
+  <a href="{% url 'login' %}" class="mx-4 font-semibold hover:opacity-70">Connexion</a>
+{% endif %}
+
+      
+      
+    </nav>
+  </header>

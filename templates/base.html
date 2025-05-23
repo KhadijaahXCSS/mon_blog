@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khadija's Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#D06224',
+            chileRojo: '#AE431E',
+            olive: '#8A8C35',
+            sunset: '#EAC891',
+            dark: '#1a1a1a',
+          },
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-sunset dark:bg-dark text-dark dark:text-white font-montserrat transition duration-500">
+ {% include "partials/header.html"%}
+
+  {% block content %}
+<div class="container">
+
+</div>
+  {% endblock %}
+  <footer class="bg-terracotta text-white text-center p-4 mt-10">
+    <p>&copy; 2025 AuraCodeSN</p>
+  </footer>
+</body>
+</html>
