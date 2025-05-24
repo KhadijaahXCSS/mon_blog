@@ -4,7 +4,7 @@
 <div class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Le Blog de Khadijaah</h2>
+      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Sàkk Xibaar</h2>
    
     </div>
 
@@ -29,6 +29,10 @@
         Se connecter
       </button>
     </form>
+    <div class="mt-6 text-center">
+      <p class="text-sm text-gray-600">Vous n'avez pas de compte ? <a href="{% url 'register' %}" class="text-terracotta font-semibold hover:underline">Inscrivez-vous</a></p>
+    </div>
+
 
     {% if error_message %}
       <div class="mt-4 text-sm text-red-600 text-center">{{ error_message }}</div>

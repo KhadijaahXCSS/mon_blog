@@ -4,7 +4,7 @@
 <div class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Le Blog de Khadijaah</h2>
+      <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Wàllu Xam-Xam</h2>
       <p class="mt-2 text-lg/8 text-gray-600">Details de l'article</p>
     </div>
 
@@ -35,20 +35,19 @@
         <div class="mt-5 text-sm text-gray-600">
           <a href="{% url 'articles' %}" class="text-blue-500 hover:underline">Retour à la liste des articles</a>
         </div>
-       {% if user.is_authenticated %}
+    {% if user.is_authenticated and article.auteur == user %}
   <button class="mt-10 bg-terracotta text-white font-semibold py-2 px-4 rounded">
-   <a href="{% url 'modifier_article' id=article.id %}">Modifier</a>
+    <a href="{% url 'modifier_article' id=article.id %}">Modifier</a>
   </button>
   <button class="mt-10 bg-red text-white font-semibold py-2 px-4 rounded">
-     <a href="{% url 'supprimer_article' article.id %}" 
-   onclick="return confirm('etes-vous sur de vouloir supprimer cet article ?');"
-   class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-   Supprimer
-</a>
-
-
+    <a href="{% url 'supprimer_article' article.id %}" 
+       onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');"
+       class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+       Supprimer
+    </a>
   </button>
 {% endif %}
+
 
         </article>
         {% endblock content %}
